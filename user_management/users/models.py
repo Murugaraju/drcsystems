@@ -9,6 +9,7 @@ from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
 
+
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
         """
@@ -49,6 +50,7 @@ class UserManager(BaseUserManager):
         user.admin = True
         user.save(using=self._db)
         return user
+
 
 class User(AbstractBaseUser):
     email = models.EmailField(
